@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ds:DaaSpec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ds="http://www.tibco.com/tns/daaspec" daaFile="/Math_SOA/Deployment Artifacts/Math_SOA.daa" sourceModelFile="/Math_SOA/Composites/Math_SOA.composite" daaSpecFile="/Math_SOA/Deployment Artifacts/Math_SOA.daaspec">
+  <sourceModelFiles>/Math_SOA/Composites/Math_SOA.composite</sourceModelFiles>
+</ds:DaaSpec>

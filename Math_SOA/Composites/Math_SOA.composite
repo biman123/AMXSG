@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:bwse="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/bwse" xmlns:componentmodel="http://xsd.tns.tibco.com/amsb/core/models/componentmodel" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:compositenotation="http://www.tibco.com/models/compositenotation" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmlns:soapbt="http://xsd.tns.tibco.com/amf/models/sca/binding/soap" xmi:id="_ZvRtcNC9EeaP_6VhKi7d6A" targetNamespace="http://www.example.com/Math_SOA" name="Math_SOA" compositeext:version="1.0.0.qualifier" compositeext:formatVersion="2">
+  <sca:service xmi:id="_j_05wNDJEeaP_6VhKi7d6A" name="Service1" promote="Mediation1/PortType">
+    <sca:interface.wsdl xmi:id="_san70NDJEeaP_6VhKi7d6A" interface="http://xmlns.example.com/1482476458205#wsdl.interface(PortType)" scaext:wsdlLocation="../Service%20Descriptors/WSDL.wsdl"/>
+    <sca:binding.sca xmi:id="_j_05wtDJEeaP_6VhKi7d6A" name="Virtualization"/>
+    <soapbt:binding.soap.service xmi:id="_rckYINDJEeaP_6VhKi7d6A" name="SOAPService_Binding1" transportBindingType="HTTP" attachmentStyle="DOCUMENT" portType="../Service%20Descriptors/WSDL.wsdl#//@ePortTypes.0" targetNamespace="http://xmlns.example.com/1482476458205/Service1">
+      <operationConfiguration xmi:id="_rc5vUNDJEeaP_6VhKi7d6A" operation="../Service%20Descriptors/WSDL.wsdl#//@ePortTypes.0/@eOperations.0" action="Operation" actionNeeded="true">
+        <messageConfiguration xmi:id="_rc5vUdDJEeaP_6VhKi7d6A" message="../Service%20Descriptors/WSDL.wsdl#//@eMessages.0">
+          <messagePartConfigurations xsi:type="soapbt:BodyPartConfiguration" xmi:id="_rc5vUtDJEeaP_6VhKi7d6A" messagePart="../Service%20Descriptors/WSDL.wsdl#//@eMessages.0/@eParts.0"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_rc5vU9DJEeaP_6VhKi7d6A" message="../Service%20Descriptors/WSDL.wsdl#//@eMessages.1" messageDirection="OUTPUT">
+          <messagePartConfigurations xsi:type="soapbt:BodyPartConfiguration" xmi:id="_rc5vVNDJEeaP_6VhKi7d6A" messagePart="../Service%20Descriptors/WSDL.wsdl#//@eMessages.1/@eParts.0"/>
+        </messageConfiguration>
+        <bindingType xmi:id="_rc5vVdDJEeaP_6VhKi7d6A"/>
+      </operationConfiguration>
+      <inboundConfiguration xsi:type="soapbt:HttpTransportConfiguration" xmi:id="_riy78NDJEeaP_6VhKi7d6A" endpointURI="/portType/"/>
+      <defaultBindingType xmi:id="_rc2E8NDJEeaP_6VhKi7d6A"/>
+    </soapbt:binding.soap.service>
+    <scact:bindingAdjunct xmi:id="_j_05w9DJEeaP_6VhKi7d6A" bindingName="Virtualization"/>
+    <scact:bindingAdjunct xmi:id="_riy78dDJEeaP_6VhKi7d6A" bindingName="SOAPService_Binding1">
+      <sca:property xmi:id="_riy78tDJEeaP_6VhKi7d6A" mustSupply="true" name="HttpInboundConnectionConfig" type="XMLSchema:string" scaext:simpleValue="httpConnector"/>
+    </scact:bindingAdjunct>
+  </sca:service>
+  <sca:component xmi:id="_YwwZQNDJEeaP_6VhKi7d6A" name="Mediation1" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="componentmodel:MediationImplementation" xmi:id="_YwwZQdDJEeaP_6VhKi7d6A" mediationService="../Mediation%20Flows/routing.mediation#_dD6G8NC9EeaP_6VhKi7d6A"/>
+    <sca:service xmi:id="_bVeYwNDJEeaP_6VhKi7d6A" name="PortType">
+      <sca:interface.wsdl xmi:id="_bVeYwdDJEeaP_6VhKi7d6A" interface="http://xmlns.example.com/1482476458205#wsdl.interface(PortType)" scaext:wsdlLocation="../Service%20Descriptors/WSDL.wsdl"/>
+    </sca:service>
+    <sca:reference xmi:id="_bVe_0NDJEeaP_6VhKi7d6A" name="PortType" wiredByImpl="false">
+      <sca:interface.wsdl xmi:id="_bVe_0dDJEeaP_6VhKi7d6A" interface="http://xmlns.example.com/1482400013809#wsdl.interface(PortType)" scaext:wsdlLocation="../Service%20Descriptors/concrete_add_wsdl.wsdl"/>
+    </sca:reference>
+    <sca:reference xmi:id="_bVe_0tDJEeaP_6VhKi7d6A" name="PortType1" wiredByImpl="false">
+      <sca:interface.wsdl xmi:id="_bVe_09DJEeaP_6VhKi7d6A" interface="http://xmlns.example.com/1483340884570#wsdl.interface(PortType)" scaext:wsdlLocation="../Service%20Descriptors/concrete_sub_wsdl.wsdl"/>
+    </sca:reference>
+  </sca:component>
+  <sca:component xmi:id="_ZqpOoNDJEeaP_6VhKi7d6A" name="BWSE1" compositeext:version="1.0.0.qualifier">
+    <bwse:implementation.bwse xmi:id="_ZqpOodDJEeaP_6VhKi7d6A" projectName="Math" serviceResourcePath="/Math/Total.serviceagent">
+      <bwServiceInterface xmi:id="_fcFo0NDJEeaP_6VhKi7d6A" serviceResourcePath="Total.serviceagent" portTypeNamespace="http://xmlns.example.com/1482389457913" wsdlLocation="/ADDITION/A_add_WSDL.wsdl" serviceResourceNamespace="http://xmlns.example.com/1482389446803" serviceInterfaceName="PortType" portTypeName="PortType">
+        <portTypeEndPoints xmi:id="_fcFo0dDJEeaP_6VhKi7d6A" endPointName="PortTypeEndpoint0" isEnabled="true"/>
+      </bwServiceInterface>
+      <bwServiceInterface xmi:id="_fcGP4NDJEeaP_6VhKi7d6A" serviceResourcePath="Total.serviceagent" portTypeNamespace="http://xmlns.example.com/1482389737137" wsdlLocation="/SUBSTRACT/A_sub_WSDL.wsdl" serviceResourceNamespace="http://xmlns.example.com/1482389446803" serviceInterfaceName="PortType1" portTypeName="PortType">
+        <portTypeEndPoints xmi:id="_fcGP4dDJEeaP_6VhKi7d6A" endPointName="PortTypeEndpoint1" isEnabled="true"/>
+      </bwServiceInterface>
+    </bwse:implementation.bwse>
+    <sca:service xmi:id="_fcG28NDJEeaP_6VhKi7d6A" name="PortType">
+      <sca:interface.wsdl xmi:id="_fcG28dDJEeaP_6VhKi7d6A" interface="http://xmlns.example.com/1482389457913#wsdl.interface(PortType)" scaext:wsdlLocation="../../Math/ADDITION/A_add_WSDL.wsdl"/>
+    </sca:service>
+    <sca:service xmi:id="_fcG28tDJEeaP_6VhKi7d6A" name="PortType1">
+      <sca:interface.wsdl xmi:id="_fcG289DJEeaP_6VhKi7d6A" interface="http://xmlns.example.com/1482389737137#wsdl.interface(PortType)" scaext:wsdlLocation="../../Math/SUBSTRACT/A_sub_WSDL.wsdl"/>
+    </sca:service>
+  </sca:component>
+  <sca:wire xmi:id="_iQC-MNDJEeaP_6VhKi7d6A" source="Mediation1/PortType" target="BWSE1/PortType"/>
+  <sca:wire xmi:id="_izRAANDJEeaP_6VhKi7d6A" source="Mediation1/PortType1" target="BWSE1/PortType1"/>
+  <notation:diagram xsi:type="notation:Diagram" xmi:id="_Zwa88NC9EeaP_6VhKi7d6A" type="Composite" element="#/" name="SCA Composite" measurementUnit="Pixel">
+    <children xmi:id="_aFAs4NC9EeaP_6VhKi7d6A" type="2001" element="#_ZvRtcNC9EeaP_6VhKi7d6A">
+      <children xmi:id="_aFEXQNC9EeaP_6VhKi7d6A" type="5004"/>
+      <children xmi:id="_aFGMcNC9EeaP_6VhKi7d6A" type="7001">
+        <children xmi:id="_j_2u8NDJEeaP_6VhKi7d6A" type="3001" element="#_j_05wNDJEeaP_6VhKi7d6A">
+          <children xmi:id="_j_3WANDJEeaP_6VhKi7d6A" type="5002"/>
+          <styles xsi:type="notation:ShapeStyle" xmi:id="_j_2u8dDJEeaP_6VhKi7d6A" fontName="Segoe UI" fontHeight="10"/>
+          <styles xsi:type="compositenotation:ShapeGradientStyle" xmi:id="_j_2u8tDJEeaP_6VhKi7d6A" gradStartColor="14150097" gradEndColor="7844710"/>
+          <styles xsi:type="compositenotation:CustomImageStyle" xmi:id="_j_2u89DJEeaP_6VhKi7d6A"/>
+          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_j_2u9NDJEeaP_6VhKi7d6A"/>
+        </children>
+        <styles xsi:type="notation:SortingStyle" xmi:id="_aFGMcdC9EeaP_6VhKi7d6A"/>
+        <styles xsi:type="notation:FilteringStyle" xmi:id="_aFGMctC9EeaP_6VhKi7d6A"/>
+      </children>
+      <children xmi:id="_aFGMc9C9EeaP_6VhKi7d6A" type="7002">
+        <styles xsi:type="notation:SortingStyle" xmi:id="_aFGMdNC9EeaP_6VhKi7d6A"/>
+        <styles xsi:type="notation:FilteringStyle" xmi:id="_aFGMddC9EeaP_6VhKi7d6A"/>
+      </children>
+      <children xmi:id="_aFGzgNC9EeaP_6VhKi7d6A" type="7003">
+        <children xmi:id="_Yw0qsNDJEeaP_6VhKi7d6A" type="3003" element="#_YwwZQNDJEeaP_6VhKi7d6A">
+          <children xmi:id="_Yw140NDJEeaP_6VhKi7d6A" type="5001"/>
+          <children xmi:id="_Yw2f4NDJEeaP_6VhKi7d6A" type="7004">
+            <children xmi:id="_bViDINDJEeaP_6VhKi7d6A" type="3004" element="#_bVeYwNDJEeaP_6VhKi7d6A">
+              <styles xsi:type="notation:ShapeStyle" xmi:id="_bViDIdDJEeaP_6VhKi7d6A" fontName="Segoe UI" fontHeight="10"/>
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_bViDItDJEeaP_6VhKi7d6A"/>
+            </children>
+            <styles xsi:type="notation:SortingStyle" xmi:id="_Yw2f4dDJEeaP_6VhKi7d6A"/>
+            <styles xsi:type="notation:FilteringStyle" xmi:id="_Yw2f4tDJEeaP_6VhKi7d6A"/>
+          </children>
+          <children xmi:id="_Yw3G8NDJEeaP_6VhKi7d6A" type="7005">
+            <children xmi:id="_bVwsoNDJEeaP_6VhKi7d6A" type="3005" element="#_bVe_0NDJEeaP_6VhKi7d6A">
+              <styles xsi:type="notation:ShapeStyle" xmi:id="_bVwsodDJEeaP_6VhKi7d6A" fontName="Segoe UI" fontHeight="10"/>
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_bVwsotDJEeaP_6VhKi7d6A"/>
+            </children>
+            <children xmi:id="_bVxTsNDJEeaP_6VhKi7d6A" type="3005" element="#_bVe_0tDJEeaP_6VhKi7d6A">
+              <styles xsi:type="notation:ShapeStyle" xmi:id="_bVxTsdDJEeaP_6VhKi7d6A" fontName="Segoe UI" fontHeight="10"/>
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_bVxTstDJEeaP_6VhKi7d6A"/>
+            </children>
+            <styles xsi:type="notation:SortingStyle" xmi:id="_Yw3G8dDJEeaP_6VhKi7d6A"/>
+            <styles xsi:type="notation:FilteringStyle" xmi:id="_Yw3G8tDJEeaP_6VhKi7d6A"/>
+          </children>
+          <children xmi:id="_Yw4VENDJEeaP_6VhKi7d6A" type="7006">
+            <children xmi:id="_Yw4VFNDJEeaP_6VhKi7d6A" visible="false" type="7600">
+              <styles xsi:type="notation:ShapeStyle" xmi:id="_Yw4VFdDJEeaP_6VhKi7d6A" fontName="Segoe UI" fontHeight="10"/>
+              <element xsi:nil="true"/>
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_Yw4VFtDJEeaP_6VhKi7d6A"/>
+            </children>
+            <styles xsi:type="notation:SortingStyle" xmi:id="_Yw4VEdDJEeaP_6VhKi7d6A"/>
+            <styles xsi:type="notation:FilteringStyle" xmi:id="_Yw4VEtDJEeaP_6VhKi7d6A"/>
+            <styles xsi:type="compositenotation:CollapseStyle" xmi:id="_Yw4VE9DJEeaP_6VhKi7d6A"/>
+          </children>
+          <styles xsi:type="notation:ShapeStyle" xmi:id="_Yw0qsdDJEeaP_6VhKi7d6A" fontName="Segoe UI" fontHeight="10"/>
+          <styles xsi:type="compositenotation:ShapeGradientStyle" xmi:id="_Yw0qstDJEeaP_6VhKi7d6A" gradStartColor="16642791" gradEndColor="14072216"/>
+          <styles xsi:type="compositenotation:CustomImageStyle" xmi:id="_Yw0qs9DJEeaP_6VhKi7d6A"/>
+          <styles xsi:type="compositenotation:CustomComponentIconStyle" xmi:id="_Yw0qtNDJEeaP_6VhKi7d6A"/>
+          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_Yw0qtdDJEeaP_6VhKi7d6A" x="160" y="36"/>
+        </children>
+        <children xmi:id="_Zqp1sNDJEeaP_6VhKi7d6A" type="3003" element="#_ZqpOoNDJEeaP_6VhKi7d6A">
+          <children xmi:id="_ZqqcwNDJEeaP_6VhKi7d6A" type="5001"/>
+          <children xmi:id="_ZqqcwdDJEeaP_6VhKi7d6A" type="7004">
+            <children xmi:id="_fcHeANDJEeaP_6VhKi7d6A" type="3004" element="#_fcG28NDJEeaP_6VhKi7d6A">
+              <styles xsi:type="notation:ShapeStyle" xmi:id="_fcIFENDJEeaP_6VhKi7d6A" fontName="Segoe UI" fontHeight="10"/>
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_fcIFEdDJEeaP_6VhKi7d6A"/>
+            </children>
+            <children xmi:id="_fcIFEtDJEeaP_6VhKi7d6A" type="3004" element="#_fcG28tDJEeaP_6VhKi7d6A">
+              <styles xsi:type="notation:ShapeStyle" xmi:id="_fcIFE9DJEeaP_6VhKi7d6A" fontName="Segoe UI" fontHeight="10"/>
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_fcIFFNDJEeaP_6VhKi7d6A"/>
+            </children>
+            <styles xsi:type="notation:SortingStyle" xmi:id="_ZqqcwtDJEeaP_6VhKi7d6A"/>
+            <styles xsi:type="notation:FilteringStyle" xmi:id="_Zqqcw9DJEeaP_6VhKi7d6A"/>
+          </children>
+          <children xmi:id="_ZqqcxNDJEeaP_6VhKi7d6A" type="7005">
+            <styles xsi:type="notation:SortingStyle" xmi:id="_ZqqcxdDJEeaP_6VhKi7d6A"/>
+            <styles xsi:type="notation:FilteringStyle" xmi:id="_ZqqcxtDJEeaP_6VhKi7d6A"/>
+          </children>
+          <children xmi:id="_Zqqcx9DJEeaP_6VhKi7d6A" type="7006">
+            <children xmi:id="_ZqrD0NDJEeaP_6VhKi7d6A" visible="false" type="7600">
+              <styles xsi:type="notation:ShapeStyle" xmi:id="_ZqrD0dDJEeaP_6VhKi7d6A" fontName="Segoe UI" fontHeight="10"/>
+              <element xsi:nil="true"/>
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_ZqrD0tDJEeaP_6VhKi7d6A"/>
+            </children>
+            <styles xsi:type="notation:SortingStyle" xmi:id="_ZqqcyNDJEeaP_6VhKi7d6A"/>
+            <styles xsi:type="notation:FilteringStyle" xmi:id="_ZqqcydDJEeaP_6VhKi7d6A"/>
+            <styles xsi:type="compositenotation:CollapseStyle" xmi:id="_ZqqcytDJEeaP_6VhKi7d6A"/>
+          </children>
+          <styles xsi:type="notation:ShapeStyle" xmi:id="_Zqp1sdDJEeaP_6VhKi7d6A" fontName="Segoe UI" fontHeight="10"/>
+          <styles xsi:type="compositenotation:ShapeGradientStyle" xmi:id="_Zqp1stDJEeaP_6VhKi7d6A" gradStartColor="16642791" gradEndColor="14072216"/>
+          <styles xsi:type="compositenotation:CustomImageStyle" xmi:id="_Zqp1s9DJEeaP_6VhKi7d6A"/>
+          <styles xsi:type="compositenotation:CustomComponentIconStyle" xmi:id="_Zqp1tNDJEeaP_6VhKi7d6A"/>
+          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_Zqp1tdDJEeaP_6VhKi7d6A" x="388" y="36"/>
+        </children>
+        <styles xsi:type="notation:SortingStyle" xmi:id="_aFGzgdC9EeaP_6VhKi7d6A"/>
+        <styles xsi:type="notation:FilteringStyle" xmi:id="_aFGzgtC9EeaP_6VhKi7d6A"/>
+      </children>
+      <children xmi:id="_aFHakNC9EeaP_6VhKi7d6A" type="7007">
+        <children xmi:id="_aFIBoNC9EeaP_6VhKi7d6A" visible="false" type="7600">
+          <styles xsi:type="notation:ShapeStyle" xmi:id="_aFIBodC9EeaP_6VhKi7d6A" fontName="Segoe UI" fontHeight="10"/>
+          <element xsi:nil="true"/>
+          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_aFIBotC9EeaP_6VhKi7d6A"/>
+        </children>
+        <styles xsi:type="notation:SortingStyle" xmi:id="_aFHakdC9EeaP_6VhKi7d6A"/>
+        <styles xsi:type="notation:FilteringStyle" xmi:id="_aFHaktC9EeaP_6VhKi7d6A"/>
+      </children>
+      <styles xsi:type="notation:ShapeStyle" xmi:id="_aFAs4dC9EeaP_6VhKi7d6A" fontName="Segoe UI" fontHeight="10"/>
+      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_aFAs4tC9EeaP_6VhKi7d6A" x="10" y="10" width="924" height="350"/>
+    </children>
+    <styles xsi:type="notation:DiagramStyle" xmi:id="_Zwa88dC9EeaP_6VhKi7d6A"/>
+    <styles xsi:type="compositenotation:CustomImageStyle" xmi:id="_Zwa88tC9EeaP_6VhKi7d6A"/>
+    <styles xsi:type="compositenotation:ShapeGradientStyle" xmi:id="_Zwa889C9EeaP_6VhKi7d6A"/>
+    <edges xmi:id="_iQH2sNDJEeaP_6VhKi7d6A" type="4001" element="#_iQC-MNDJEeaP_6VhKi7d6A" source="#_bVwsoNDJEeaP_6VhKi7d6A" target="#_fcHeANDJEeaP_6VhKi7d6A">
+      <styles xsi:type="notation:ConnectorStyle" xmi:id="_iQH2sdDJEeaP_6VhKi7d6A" routing="Rectilinear"/>
+      <styles xsi:type="notation:FontStyle" xmi:id="_iQH2stDJEeaP_6VhKi7d6A" fontName="Segoe UI" fontHeight="10"/>
+      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_iQH2s9DJEeaP_6VhKi7d6A" points="[12, 3, -108, 3]$[114, 3, -6, 3]"/>
+    </edges>
+    <edges xmi:id="_izS1MNDJEeaP_6VhKi7d6A" type="4001" element="#_izRAANDJEeaP_6VhKi7d6A" source="#_bVxTsNDJEeaP_6VhKi7d6A" target="#_fcIFEtDJEeaP_6VhKi7d6A">
+      <styles xsi:type="notation:ConnectorStyle" xmi:id="_izS1MdDJEeaP_6VhKi7d6A" routing="Rectilinear"/>
+      <styles xsi:type="notation:FontStyle" xmi:id="_izTcQNDJEeaP_6VhKi7d6A" fontName="Segoe UI" fontHeight="10"/>
+      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_izTcQdDJEeaP_6VhKi7d6A" points="[12, 3, -108, 3]$[114, 3, -6, 3]"/>
+    </edges>
+    <edges xmi:id="_kvrpYNDJEeaP_6VhKi7d6A" type="4002" source="#_j_2u8NDJEeaP_6VhKi7d6A" target="#_bViDINDJEeaP_6VhKi7d6A">
+      <styles xsi:type="notation:ConnectorStyle" xmi:id="_kvrpYdDJEeaP_6VhKi7d6A" routing="Rectilinear"/>
+      <styles xsi:type="notation:FontStyle" xmi:id="_kvrpYtDJEeaP_6VhKi7d6A" fontName="Segoe UI" fontHeight="10"/>
+      <element xsi:nil="true"/>
+      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_kvrpY9DJEeaP_6VhKi7d6A" points="[30, -6, -183, -38]$[207, 35, -6, 3]"/>
+    </edges>
+  </notation:diagram>
+</sca:composite>

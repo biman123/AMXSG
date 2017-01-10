@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:ns2="http://www.tibco.com/schemas/Math/Schema1.xsd" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://www.tibco.com/schemas/Math/Schema.xsd" xmlns:tns="http://xmlns.example.com/1482389737137" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.example.com/1482389737137">
+    <import namespace="http://www.tibco.com/schemas/Math/Schema.xsd" location="../Input.xsd"/>
+    <import namespace="http://www.tibco.com/schemas/Math/Schema1.xsd" location="../Output.xsd"/>
+    <message name="sub_inp_Message">
+        <part name="In" element="ns:Numbers"/>
+    </message>
+    <message name="sub_out_Message1">
+        <part name="Out" element="ns2:Output"/>
+    </message>
+    <portType name="PortType">
+        <operation name="Operation">
+            <input message="tns:sub_inp_Message"/>
+            <output message="tns:sub_out_Message1"/>
+        </operation>
+    </portType>
+</definitions>

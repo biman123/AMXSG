@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.tibco.com/schemas/Math/Schema.xsd"
+	 targetNamespace="http://www.tibco.com/schemas/Math/Schema.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="Numbers">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="num1"/>
+				<xs:element ref="num2"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="num1" type="xs:int"/>
+	<xs:element name="num2" type="xs:int"/>
+</xs:schema>
