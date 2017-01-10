@@ -33,7 +33,7 @@
       <sca:interface.wsdl xmi:id="_bVe_09DJEeaP_6VhKi7d6A" interface="http://xmlns.example.com/1483340884570#wsdl.interface(PortType)" scaext:wsdlLocation="../Service%20Descriptors/concrete_sub_wsdl.wsdl"/>
     </sca:reference>
   </sca:component>
-  <sca:component xmi:id="_ZqpOoNDJEeaP_6VhKi7d6A" name="BWSE1" compositeext:version="1.0.0.qualifier">
+  <sca:component xmi:id="_ZqpOoNDJEeaP_6VhKi7d6A" name="TotalBWImplementation" compositeext:version="1.0.0.qualifier">
     <bwse:implementation.bwse xmi:id="_ZqpOodDJEeaP_6VhKi7d6A" projectName="Math" serviceResourcePath="/Math/Total.serviceagent">
       <bwServiceInterface xmi:id="_fcFo0NDJEeaP_6VhKi7d6A" serviceResourcePath="Total.serviceagent" portTypeNamespace="http://xmlns.example.com/1482389457913" wsdlLocation="/ADDITION/A_add_WSDL.wsdl" serviceResourceNamespace="http://xmlns.example.com/1482389446803" serviceInterfaceName="PortType" portTypeName="PortType">
         <portTypeEndPoints xmi:id="_fcFo0dDJEeaP_6VhKi7d6A" endPointName="PortTypeEndpoint0" isEnabled="true"/>
@@ -49,8 +49,8 @@
       <sca:interface.wsdl xmi:id="_fcG289DJEeaP_6VhKi7d6A" interface="http://xmlns.example.com/1482389737137#wsdl.interface(PortType)" scaext:wsdlLocation="../../Math/SUBSTRACT/A_sub_WSDL.wsdl"/>
     </sca:service>
   </sca:component>
-  <sca:wire xmi:id="_iQC-MNDJEeaP_6VhKi7d6A" source="Mediation1/PortType" target="BWSE1/PortType"/>
-  <sca:wire xmi:id="_izRAANDJEeaP_6VhKi7d6A" source="Mediation1/PortType1" target="BWSE1/PortType1"/>
+  <sca:wire xmi:id="_iQC-MNDJEeaP_6VhKi7d6A" source="Mediation1/PortType" target="TotalBWImplementation/PortType"/>
+  <sca:wire xmi:id="_izRAANDJEeaP_6VhKi7d6A" source="Mediation1/PortType1" target="TotalBWImplementation/PortType1"/>
   <notation:diagram xsi:type="notation:Diagram" xmi:id="_Zwa88NC9EeaP_6VhKi7d6A" type="Composite" element="#/" name="SCA Composite" measurementUnit="Pixel">
     <children xmi:id="_aFAs4NC9EeaP_6VhKi7d6A" type="2001" element="#_ZvRtcNC9EeaP_6VhKi7d6A">
       <children xmi:id="_aFEXQNC9EeaP_6VhKi7d6A" type="5004"/>
